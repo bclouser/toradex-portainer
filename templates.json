@@ -1,0 +1,291 @@
+[
+  {
+    "type": "container",
+    "title": "The OSF Gateway",
+    "description": "A demonstration set of containers to create a BLE IoT gateway",
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/osf.png",
+    "restart_policy": "no",
+    "image": "opensourcefoundries/compose-launcher:latest",
+    "categories": [
+      "IoT",
+      "Gateway",
+      "Demonstration"
+    ],
+    "env": [
+      {
+        "name": "TARGET",
+        "description": "Docker compose file to run",
+        "set": "simple-gateway.yml"
+      },
+      {
+        "name": "ACCOUNT",
+        "description": "Docker hub account",
+        "set": "opensourcefoundries"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/var/run/docker.sock",
+        "bind": "/var/run/docker.sock"
+      }
+    ]
+  },
+  {
+    "type": "container",
+    "title": "The OSF All-in-one Demo",
+    "description": "A Wifi AP and IoT device management suite all on your device",
+    "categories": [
+      "IoT",
+      "Gateway",
+      "Demonstration"
+    ],
+    "env": [
+      {
+        "name": "TARGET",
+        "description": "The set of containers to launch",
+        "set": "all-in-one.yml"
+      },
+      {
+        "name": "ACCOUNT",
+        "description": "The account on docker hub",
+        "set": "akbennett"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/var/run/docker.sock",
+        "bind": "/var/run/docker.sock"
+      }
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/osf.png",
+    "restart_policy": "no",
+    "image": "opensourcefoundries/compose-launcher:latest"
+  },
+  {
+    "type": "container",
+    "title": "hawkbit",
+    "description": "Eclipse Foundation's Hawkbit OTA Server",
+    "categories": [
+      "Device Management"
+    ],
+    "network": "bridge",
+    "ports": [
+      "8080/tcp"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/hawkbit.png",
+    "image": "opensourcefoundries/hawkbit-update-server:latest",
+    "restart_policy": "no"
+  },
+  {
+    "type": "container",
+    "title": "OK Google - Voice Assistant",
+    "description": "The OK Google Voice assistant (requires configuration)",
+    "categories": [
+      "Demonstration",
+      "Audio",
+      "Google"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/google.png",
+    "image": "opensourcefoundries/ok-google:latest",
+    "privileged": true,
+    "restart_policy": "no",
+    "interactive": true,
+    "env": [
+      {
+          "name": "MIC_ADDR",
+          "label": "The pcm address for the microphone",
+          "set": ""
+      },
+      {
+          "name": "SPEAKER_ADDR",
+          "label": "The pcm address for the speaker",
+          "set": ""
+      },
+      {
+          "name": "PROJECT_ID",
+          "label": "ID of project when created in Google Cloud Platform",
+          "set": ""
+      },
+      {
+          "name": "MODEL_ID",
+          "label": "Model ID for device when created in Google Cloud Platform",
+          "set": ""
+      },
+      {
+          "name": "CLIENT_SECRET",
+          "label": "Client secret from Google Cloud Platform",
+          "set": ""
+      },
+      {
+          "name": "CLIENT_ID",
+          "label": "Client ID from Google Cloud Platform",
+          "set": ""
+      },
+      {
+          "name": "REFRESH_TOKEN",
+          "label": "Refresh token when device was authenticated",
+          "set": ""
+      }
+    ]
+  },
+  {
+    "type": "container",
+    "title": "Xorg Demo",
+    "description": "Xorg server (Simply FB TFT display and ADS7846 touchscreen)",
+    "categories": [
+      "Demonstration",
+      "Graphics"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/xorg.png",
+    "privileged": true,
+    "image": "opensourcefoundries/simple-fbtft:latest",
+    "volumes": [
+      {
+        "container": "/var/run/dbus/system_bus_socket",
+        "bind": "/var/run/dbus/system_bus_socket"
+      }
+    ],
+    "restart_policy": "no"
+  },
+  {
+    "type": "container",
+    "title": "Azure IOT Edge",
+    "description": "Azure IOT Edge Demo Docker Image",
+    "restart_policy":"no",
+    "env":[
+      {
+        "name": "CONNECTIONSTRING",
+        "set": "HostName=ToradexHub.azure-devices.net;DeviceId=test;SharedAccessKey=4r52Rh/tdxVy5022U1K3RHPZATQ6wcJ5tv1JtPbWIDc="
+      }
+    ],
+    "categories": [
+      "Azure",
+      "IOT",
+      "Demonstration"
+    ],
+    "volumes": [
+      {
+        "container": "/var/run/docker.sock",
+        "bind": "/var/run/docker.sock"
+      }
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/azure.png",
+    "image": "jeremiascordoba/iot-edge:arm"
+  },
+  {
+    "type": "container",
+    "title": "Freeboard",
+    "description": "Damn Sexy IoT Dashboard",
+    "restart_policy":"no",
+    "categories": [
+      "Dashboard",
+      "IOT"
+    ],
+    "ports":[
+      "80/tcp"
+    ],
+    "volumes": [
+      {
+        "container": "/usr/share/nginx/html/dashboard.json",
+        "bind": "/var/freeboard/dashboard-private.json"
+      }
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/freeboard.png",
+    "image": "linarotechnologies/freeboard"
+  },
+  {
+    "type": "container",
+    "title": "Boot2Qt",
+    "name": "Boot2Qt",
+    "description": "Lightweight Qt environment for directly running Qt Apps",
+    "restart_policy":"no",
+    "categories": [
+      "GUI",
+      "IOT"
+    ],
+    "ports":[
+      "80/tcp"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/qt.png",
+    "image": "bshibley/apalis-imx6-yocto-boot2qt"
+  },
+  {
+    "type": "container",
+    "title": "Debian LXDE X11",
+    "name": "Debian LXDE X11",
+    "description": "Debian running the Lightweight Desktop Manager on X11",
+    "restart_policy":"no",
+    "privileged":true,
+    "categories": [
+      "GUI",
+      "Linux"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/lxde.png",
+    "image": "bshibley/debian-lxde-x11",
+    "command": "/bin/bash -c \"echo root:password | chpasswd\""
+  },
+  {
+    "type": "container",
+    "title": "Debian LXQT X11",
+    "name": "Debian LXQT X11",
+    "description": "Debian running the QT desktop manager on X11",
+    "restart_policy":"no",
+    "privileged":true,
+    "categories": [
+      "GUI",
+      "Linux"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/lxqt.png",
+    "image": "bshibley/debian-lxqt-x11",
+    "command": "/bin/bash -c \"echo root:password | chpasswd\""
+  },
+  {
+    "type": "container",
+    "title": "Ubuntu LXDE X11",
+    "name": "Ubuntu LXDE X11",
+    "description": "Ubuntu running the Lightweight Desktop Manager on X11",
+    "restart_policy":"no",
+    "privileged":true,
+    "categories": [
+      "GUI",
+      "Linux"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/lxde.png",
+    "image": "bshibley/ubuntu-lxde-x11",
+    "command": "/bin/bash -c \"echo root:password | chpasswd\""
+  },
+  {
+    "type": "container",
+    "title": "Ubuntu LXQT X11",
+    "name": "Ubuntu LXQT X11",
+    "description": "Ubuntu running the QT desktop manager on X11",
+    "restart_policy":"no",
+    "privileged":true,
+    "categories": [
+      "GUI",
+      "Linux"
+    ],
+    "platform": "linux",
+    "logo": "http://10.12.1.38/logos/lxqt.png",
+    "image": "bshibley/ubuntu-lxqt-x11",
+    "command": "/bin/bash -c \"echo root:password | chpasswd\""
+  }
+]
+
+
+
+
+
+
+
