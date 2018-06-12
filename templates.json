@@ -4,7 +4,7 @@
     "title": "The OSF Gateway",
     "description": "A demonstration set of containers to create a BLE IoT gateway",
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/osf.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/osf.png",
     "restart_policy": "no",
     "image": "opensourcefoundries/compose-launcher:latest",
     "categories": [
@@ -59,7 +59,7 @@
       }
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/osf.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/osf.png",
     "restart_policy": "no",
     "image": "opensourcefoundries/compose-launcher:latest"
   },
@@ -75,7 +75,7 @@
       "8080/tcp"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/hawkbit.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/hawkbit.png",
     "image": "opensourcefoundries/hawkbit-update-server:latest",
     "restart_policy": "no"
   },
@@ -89,7 +89,7 @@
       "Google"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/google.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/google.png",
     "image": "opensourcefoundries/ok-google:latest",
     "privileged": true,
     "restart_policy": "no",
@@ -141,7 +141,7 @@
       "Graphics"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/xorg.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/xorg.png",
     "privileged": true,
     "image": "opensourcefoundries/simple-fbtft:latest",
     "volumes": [
@@ -175,7 +175,7 @@
       }
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/azure.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/azure.png",
     "image": "jeremiascordoba/iot-edge:arm"
   },
   {
@@ -197,7 +197,7 @@
       }
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/freeboard.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/freeboard.png",
     "image": "linarotechnologies/freeboard"
   },
   {
@@ -214,7 +214,7 @@
       "80/tcp"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/qt.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/qt.png",
     "image": "bshibley/apalis-imx6-yocto-boot2qt"
   },
   {
@@ -229,7 +229,7 @@
       "Linux"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/lxde.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/lxde.png",
     "image": "bshibley/debian-lxde-x11",
     "command": "/bin/bash -c \"echo root:password | chpasswd\""
   },
@@ -245,7 +245,7 @@
       "Linux"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/lxqt.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/lxqt.png",
     "image": "bshibley/debian-lxqt-x11",
     "command": "/bin/bash -c \"echo root:password | chpasswd\""
   },
@@ -261,7 +261,7 @@
       "Linux"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/lxde.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/lxde.png",
     "image": "bshibley/ubuntu-lxde-x11",
     "command": "/bin/bash -c \"echo root:password | chpasswd\""
   },
@@ -277,7 +277,7 @@
       "Linux"
     ],
     "platform": "linux",
-    "logo": "http://10.12.1.38/logos/lxqt.png",
+    "logo": "http://seahawk.toradex.int/archive/clb/toradex-portainer/logos/lxqt.png",
     "image": "bshibley/ubuntu-lxqt-x11",
     "command": "/bin/bash -c \"echo root:password | chpasswd\""
   }
