@@ -292,7 +292,7 @@
     ],
     "platform": "linux",
     "logo": "https://raw.githubusercontent.com/bclouser/toradex-portainer/master/logos/lxde.png",
-    "image": "bshibley/ubuntu-lxde-x11:bionic",
+    "image": "bclouser/ubuntu-lxde:bionic",
     "command": "startx"
   },
   {
